@@ -43,7 +43,7 @@ var reset = function () {
         var monsterToPut = {};
 		getRandomPos(monsterToPut, false);
         console.log("monster [" + monsterToPut.x + ", " + monsterToPut.y + "]")
-        monster.speed = 256 + princessesCaught * 2;
+        monsterToPut.speed = 150 + princessesCaught * 2;
 		arrayMonster.push(monsterToPut);
 	}
 };

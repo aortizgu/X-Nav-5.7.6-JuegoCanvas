@@ -1,9 +1,9 @@
 
 var isInLimits = function(object){
 
-    if( object.y > MAX_HEIGHT || 
+    if( object.y > MAX_HEIGHT ||
         object.y < MIN_HEIGHT ||
-        object.x > MAX_WIDTH || 
+        object.x > MAX_WIDTH ||
     object.x < MIN_WIDTH){
         return false;
     }
@@ -18,7 +18,7 @@ var isTouching = function(object, target, radius){
 
 var isFreeObstacles = function(object, centerIsValid){
     var ret = true;
-    for (var i=0; i < arrayStones.length; i++){        
+    for (var i=0; i < arrayStones.length; i++){
         if (isTouching(object, arrayStones[i], OBJECTSIZE - 5)){
             ret=false;
             break;
@@ -34,11 +34,11 @@ var isFreeObstacles = function(object, centerIsValid){
 
 var canGo = function(object){
     if(!isInLimits(object)){
-        console.log("Limits object(" + object.x + ", " + object.y + ")")
+        //console.log("Limits object(" + object.x + ", " + object.y + ")")
         return false;
     }
     if(!isFreeObstacles(object, true)){
-        console.log("Obstacles object(" + object.x + ", " + object.y + ")")
+        //console.log("Obstacles object(" + object.x + ", " + object.y + ")")
         return false;
     }
 	return true;

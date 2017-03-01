@@ -20,7 +20,7 @@ var reset = function () {
 	console.log("hero[" + hero.x + ", " + hero.y + "]")
 
     //Stones
-    var stones = numStones + princessesCaught;
+    var stones = numStones + parseInt(localStorage.level);
     arrayStones = [];
 	while(stones-- > 0){
         var stoneToPut = {};
@@ -43,7 +43,7 @@ var reset = function () {
         var monsterToPut = {};
 		getRandomPos(monsterToPut, false);
         console.log("monster [" + monsterToPut.x + ", " + monsterToPut.y + "]")
-        monsterToPut.speed = 150 + princessesCaught * 2;
+        monsterToPut.speed = 50 + parseInt(localStorage.level) * 2;
 		arrayMonster.push(monsterToPut);
 	}
 };

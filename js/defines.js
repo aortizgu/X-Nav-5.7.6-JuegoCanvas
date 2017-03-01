@@ -1,7 +1,8 @@
 var canvas = document.createElement("canvas");
 var ctx = canvas.getContext("2d");
 canvas.width = 512;
-canvas.height = 480;
+canvas.height = 480
+
 const MAX_WIDTH=canvas.width - 64;
 const MAX_HEIGHT=canvas.height - 64;
 const MIN_WIDTH=32;
@@ -60,7 +61,7 @@ var hero = {
 	speed: 256 // movement in pixels per second
 };
 var princess = {};
-var princessesCaught = 0;
+
 
 var numStones = 6;
 var arrayStones;
@@ -68,6 +69,9 @@ var arrayStones;
 var numMonster = 1;
 var arrayMonster;
 
+if (localStorage.getItem("level") === null) {
+  localStorage.setItem("level", parseInt(0))
+}
 
 var map=new Array(MAP_X_SIZE);
 

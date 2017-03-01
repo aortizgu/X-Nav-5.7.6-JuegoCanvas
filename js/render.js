@@ -34,5 +34,5 @@ var render = function () {
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
-	ctx.fillText("Princesses caught: " + princessesCaught, 32, 32);
+	ctx.fillText("Princesses caught: " + parseInt(localStorage.level), 32, 32);
 };

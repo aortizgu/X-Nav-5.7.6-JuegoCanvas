@@ -51,24 +51,25 @@ var update = function (modifier) {
 
     }
     if (isTouching(hero, princess, OBJECTSIZE)) {
-        ++princessesCaught;
+        localStorage.setItem("level", parseInt(localStorage.level) + 1);
         reset();
     }
 
     for (var i = 0; i < arrayMonster.length; i++) {
         if (isTouching(hero, arrayMonster[i], OBJECTSIZE)) {
-            if (princessesCaught > 0) {
-                --princessesCaught;
+            if (parseInt(localStorage.level) > 0) {
+                localStorage.setItem("level", parseInt(localStorage.level) - 1);
             }
             reset();
             break;
         }
         if (isTouching(princess, arrayMonster[i], OBJECTSIZE)) {
-            if (princessesCaught > 0) {
-                --princessesCaught;
+            if (parseInt(localStorage.level) > 0) {
+                localStorage.setItem("level", parseInt(localStorage.level) - 1);
             }
             reset();
             break;
         }
     }
+
 };
